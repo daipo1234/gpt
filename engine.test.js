@@ -9,3 +9,6 @@ test('hold can be used once per locked piece',()=>{const g=new Game(),id=g.piece
 test('spawn collision ends the game',()=>{const g=new Game();g.board[0].fill(1);g.spawn(1);assert.equal(g.over,true);});
 test('ghost lands at last valid row without moving active piece',()=>{const g=new Game(),y=g.piece.y,p=g.ghost();assert.equal(g.piece.y,y);assert.equal(g.collides(p),false);assert.equal(g.collides({...p,y:p.y+1}),true);});
 test('four rotations restore a piece',()=>{const m=[[0,1,0],[1,1,1]];assert.deepEqual(rotate(rotate(rotate(rotate(m)))),m);});
+
+test('clockwise and counterclockwise rotations have correct directions',()=>{const m=[[1,0,0],[1,1,1]];assert.deepEqual(rotate(m),[[1,1],[1,0],[1,0]]);assert.deepEqual(rotate(m,-1),[[0,1],[0,1],[1,1]]);assert.deepEqual(rotate(rotate(m),-1),m);});
+test('game supports counterclockwise rotation',()=>{const g=new Game();g.spawn(5);const original=g.piece.matrix.map(r=>r.slice());assert.equal(g.turn(-1),true);assert.deepEqual(g.piece.matrix,rotate(original,-1));assert.equal(g.turn(1),true);assert.deepEqual(g.piece.matrix,original);});
