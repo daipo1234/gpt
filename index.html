@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111713"><title>STACK — 테트리스</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="logo" href="./"><span class="logo-icon">▦</span> STACK<span class="logo-dot">.</span></a><div class="header-note"><i></i> A LITTLE FOCUS. A LITTLE FUN.</div><button id="sound" class="icon-button" aria-label="효과음 켜기" title="효과음 켜기">♫ <span>OFF</span></button></header>
+<main>
+<section class="intro"><div class="eyebrow">THE CLASSIC, REIMAGINED</div><h1>한 칸씩, 몰입의 시간.</h1><p>블록을 쌓고, 줄을 지우고, 나만의 리듬을 찾아보세요.</p></section>
+<section class="game-layout" aria-label="테트리스 게임">
+<aside class="left-panel"><div class="card score-card"><div class="label">SCORE <span>↗</span></div><strong id="score">000000</strong><div class="best">BEST <span id="best">000000</span></div></div><div class="card stats"><div><span class="label">LEVEL</span><strong id="level">01</strong></div><div><span class="label">LINES</span><strong id="lines">00</strong></div><div class="progress"><i id="progress"></i></div><p>10줄마다 레벨 업</p></div><div class="little-note"><span>✳</span><p>생각은 잠시 내려놓고,<br>다음 블록에 집중하세요.</p></div></aside>
+<div class="board-shell"><div class="board-top"><span><i></i> <span id="status">READY TO PLAY</span></span><span>10 × 20</span></div><div class="board-wrap"><canvas id="board" width="300" height="600" aria-label="테트리스 보드"></canvas><div id="overlay" class="overlay"><div class="overlay-icon">▥</div><span class="eyebrow">MAKE YOUR NEXT MOVE</span><h2 id="overlay-title">시작해 볼까요?</h2><p id="overlay-copy">작은 블록으로 만드는<br>가장 완벽한 몰입.</p><button id="play" class="primary">게임 시작 <span>↗</span></button><small>ENTER 키로도 시작할 수 있어요</small></div></div><div class="board-bottom"><span>↓ 쌓고</span><span>↻ 돌리고</span><span>✦ 비우세요</span></div></div>
+<aside class="right-panel"><div class="card next-card"><div class="label">NEXT <span>01 — 03</span></div><canvas id="next" width="180" height="210" aria-label="다음 블록 3개"></canvas></div><div class="card hold-card"><div class="label">HOLD <kbd>C</kbd></div><canvas id="hold" width="180" height="90" aria-label="보관한 블록"></canvas><p>블록을 잠시 보관하세요</p></div><div class="actions"><button id="pause" disabled>Ⅱ <span>일시정지</span><kbd>P</kbd></button><button id="restart">↻ <span>다시 시작</span><kbd>R</kbd></button></div></aside>
+</section>
+<div class="mobile-controls" aria-label="터치 조작"><button data-action="hold">보관</button><button data-action="left">←</button><button data-action="rotate">↻</button><button data-action="right">→</button><button data-action="down">↓</button><button data-action="drop">⤓</button></div>
+<section class="controls"><span class="label">HOW TO PLAY</span><div><kbd>←</kbd><kbd>→</kbd><span>이동</span></div><div><kbd>↑</kbd><span>회전</span></div><div><kbd>↓</kbd><span>빠르게 내리기</span></div><div><kbd class="space">SPACE</kbd><span>바로 떨어뜨리기</span></div><div><kbd>C</kbd><span>보관</span></div></section>
+<footer><span>LESS NOISE. MORE FLOW.</span><span>쌓이는 건 블록, 비워지는 건 생각.</span><span>EST. 2026 <span class="footer-mark">✳</span></span></footer>
+</main><script type="module" src="app.js"></script>
+</body></html>
